@@ -85,9 +85,8 @@ This will start the application on port `8080` and make all features accessible 
 ### Recorded Demo Video
 
 You can watch a walkthrough of the system here:  
-**[Watch Demo](https://your-link-here.com)**
 
-> Replace the link above with your YouTube or Google Drive video link.
+> **[Watch Demo](https://youtu.be/BuGSAD9s9ao)**
 
 ---
 
@@ -141,6 +140,8 @@ This covers:
 - Controller tests using MockMvc
 
 Test coverage ensures correctness of logic, error handling, and data flow.
+
+![img.png](img.png)
 
 ---
 
