@@ -35,8 +35,8 @@ The system includes both a REST API and a responsive web-based UI built with Thy
 ### 1. Clone the repository
 
 ```bash
-git clone git@github.com:shaghayegh-ghasemi/Student_Service.git
-cd Student_Service
+git clone https://github.com/your-username/student-management.git
+cd student_service
 ```
 
 ### 2. Build the project
@@ -45,13 +45,21 @@ cd Student_Service
 ./gradlew build
 ```
 
-### 3. Run the application
+### 3. Run the application (Development)
 
 ```bash
 ./gradlew bootRun
 ```
 
-### 4. Access the application
+---
+
+## Demo
+
+### Run from Source (Dev Mode)
+
+```bash
+./gradlew bootRun
+```
 
 - Web UI: http://localhost:8080/ui/students
 - Swagger UI: http://localhost:8080/swagger-ui.html
@@ -59,6 +67,27 @@ cd Student_Service
     - JDBC URL: `jdbc:h2:mem:studentdb`
     - Username: `shaghayegh`
     - Password: *(leave blank)*
+
+### Run the Executable JAR
+
+An executable JAR is already included in the project under the `jar/` directory.
+
+To run the application:
+
+```bash
+java -jar jar/student-service-0.0.1-SNAPSHOT.jar
+```
+
+This will start the application on port `8080` and make all features accessible through your browser.
+
+---
+
+### Recorded Demo Video
+
+You can watch a walkthrough of the system here:  
+**[Watch Demo](https://your-link-here.com)**
+
+> Replace the link above with your YouTube or Google Drive video link.
 
 ---
 
@@ -146,6 +175,3 @@ src/
 
 Shaghayegh Ghasemi  
 Developed during the Bounteous Graduate Program 2025
-```
-
-
