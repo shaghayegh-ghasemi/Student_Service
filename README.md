@@ -24,6 +24,7 @@ The system includes both a REST API and a responsive web-based UI built with Thy
 - Spring Web + Thymeleaf
 - H2 Database
 - Spring Validation
+- Lombok
 - Springdoc OpenAPI (Swagger)
 - JUnit 5, Mockito
 - Gradle
