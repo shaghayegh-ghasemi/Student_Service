@@ -1,8 +1,8 @@
 package com.bounteous.student_service.service;
 
+import com.bounteous.student_service.exception.ResourceNotFoundException;
 import com.bounteous.student_service.model.Student;
 import com.bounteous.student_service.repository.StudentRepository;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

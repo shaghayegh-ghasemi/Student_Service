@@ -11,10 +11,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.lang.model.element.Name;
+
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
+@Entity(name = "students")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
