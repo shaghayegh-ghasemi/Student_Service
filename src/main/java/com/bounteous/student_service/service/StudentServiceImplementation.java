@@ -3,6 +3,9 @@ package com.bounteous.student_service.service;
 import com.bounteous.student_service.exception.ResourceNotFoundException;
 import com.bounteous.student_service.model.Student;
 import com.bounteous.student_service.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,6 +14,7 @@ import java.util.List;
 public class StudentServiceImplementation implements StudentService {
     private final StudentRepository studentRepository;
 
+    @Autowired
     public StudentServiceImplementation(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
@@ -43,5 +47,14 @@ public class StudentServiceImplementation implements StudentService {
     @Override
     public void deleteStudent(Long id) {
         studentRepository.deleteById(id);
+    }
+
+    @Bean
+    CommandLineRunner runner(StudentRepository repository){
+        return args -> {
+            repository.save(new Student("Shaghayegh", "shaghayegh.ghasemi@bounteous.com", 26));
+            repository.save(new Student("Milad", "milad@gmail.com", 28));
+            repository.save(new Student("Sarah", "sarah@yahoo.com", 22));
+        };
     }
 }
