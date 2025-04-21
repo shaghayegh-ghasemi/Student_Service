@@ -53,8 +53,11 @@ public class StudentServiceImplementation implements StudentService {
     CommandLineRunner runner(StudentRepository repository){
         return args -> {
             repository.save(new Student("Shaghayegh", "shaghayegh.ghasemi@bounteous.com", 26));
-            repository.save(new Student("Milad", "milad@gmail.com", 28));
+            repository.save(new Student("Milad", "milad@gmail.com", 19));
             repository.save(new Student("Sarah", "sarah@yahoo.com", 22));
+            repository.save(new Student("Alice", "alice@yahoo.com", 28));
+            repository.save(new Student("Mark", "mark@concordi.ca", 24));
+            repository.save(new Student("Javad", "javad@example.com", 21));
         };
     }
 }

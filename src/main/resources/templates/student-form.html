@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+    <head>
+        <title>Find Student by ID</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <h2 class="text-center mb-4">Find Student by ID</h2>
+
+            <form th:action="@{/ui/student-form}" method="get" class="mx-auto" style="max-width: 400px;">
+                <div class="mb-3">
+                    <label for="id" class="form-label">Enter Student ID</label>
+                    <input type="number" class="form-control" id="id" name="id" placeholder="e.g. 1" required>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+
+            <!-- SUCCESS MESSAGE -->
+            <div th:if="${student}" class="card mt-5 mx-auto shadow" style="max-width: 500px;">
+                <div class="card-body">
+                    <h5 class="card-title">Student Found</h5>
+                    <p class="card-text"><strong>ID:</strong> <span th:text="${student.id}"></span></p>
+                    <p class="card-text"><strong>Name:</strong> <span th:text="${student.name}"></span></p>
+                    <p class="card-text"><strong>Email:</strong> <span th:text="${student.email}"></span></p>
+                    <p class="card-text"><strong>Age:</strong> <span th:text="${student.age}"></span></p>
+                </div>
+            </div>
+
+            <!-- ERROR MESSAGE -->
+            <div th:if="${error}" class="alert alert-danger mt-4 text-center" role="alert">
+                <span th:text="${error}">Student not found.</span>
+            </div>
+        </div>
+    </body>
+</html>

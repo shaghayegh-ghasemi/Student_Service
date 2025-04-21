@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Delete Student</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h2 class="text-center mb-4">Delete Student</h2>
+
+    <form th:action="@{/ui/delete-form}" method="post" class="mx-auto" style="max-width: 400px;">
+        <div class="mb-3">
+            <label for="id" class="form-label">Student ID</label>
+            <input type="number" class="form-control" id="id" name="id" required>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </div>
+    </form>
+
+    <div th:if="${deletedStudentName}" class="alert alert-success mt-4 text-center">
+        Student "<span th:text="${deletedStudentName}"></span>" was successfully deleted.
+    </div>
+    <div th:if="${error}" class="alert alert-danger mt-4 text-center" th:text="${error}"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+    <head>
+        <title>Add New Student</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <h2 class="text-center mb-4">Add New Student</h2>
+
+            <form th:action="@{/ui/add-form}" method="post" class="mx-auto" style="max-width: 500px;">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" required>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Add Student</button>
+                </div>
+            </form>
+
+            <div th:if="${success}" class="alert alert-success mt-4 text-center" th:text="${success}"></div>
+            <div th:if="${createdStudent}" class="card mt-5 mx-auto shadow" style="max-width: 500px;">
+                <div class="card-body">
+                    <h5 class="card-title">Student Added</h5>
+                    <p class="card-text"><strong>ID:</strong> <span th:text="${createdStudent.id}"></span></p>
+                    <p class="card-text"><strong>Name:</strong> <span th:text="${createdStudent.name}"></span></p>
+                    <p class="card-text"><strong>Email:</strong> <span th:text="${createdStudent.email}"></span></p>
+                    <p class="card-text"><strong>Age:</strong> <span th:text="${createdStudent.age}"></span></p>
+                </div>
+            </div>
+            <div th:if="${error}" class="alert alert-danger mt-4 text-center" th:text="${error}"></div>
+        </div>
+    </body>
+</html>

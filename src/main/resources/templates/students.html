@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>All Students</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h2 class="text-center mb-4">Student Management System</h2>
+
+    <div class="card shadow">
+        <div class="card-body">
+            <h5 class="card-title">List of Registered Students</h5>
+            <table class="table table-striped table-bordered text-center mt-3">
+                <thead class="table-dark">
+                <tr>
+                    <th>ID</th><th>Name</th><th>Email</th><th>Age</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="student : ${students}">
+                    <td th:text="${student.id}">1</td>
+                    <td th:text="${student.name}">Name</td>
+                    <td th:text="${student.email}">Email</td>
+                    <td th:text="${student.age}">Age</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
